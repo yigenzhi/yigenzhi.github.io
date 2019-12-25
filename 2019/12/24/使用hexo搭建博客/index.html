@@ -54,7 +54,7 @@
 <meta property="og:description" content="前言官网： https:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;hexo是一个快速，简单和强大的博客框架，使用Markdown作为渲染引擎解析文章，结合丰富的主题，分分钟生成绚丽的静态网页，是博客写作的首选。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-12-24T07:46:37.000Z">
-<meta property="article:modified_time" content="2019-12-25T07:55:39.566Z">
+<meta property="article:modified_time" content="2019-12-25T08:43:10.493Z">
 <meta property="article:author" content="空山新雨后">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -222,7 +222,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-25 15:55:39" itemprop="dateModified" datetime="2019-12-25T15:55:39+08:00">2019-12-25</time>
+                <time title="修改时间：2019-12-25 16:43:10" itemprop="dateModified" datetime="2019-12-25T16:43:10+08:00">2019-12-25</time>
               </span>
 
           
@@ -246,10 +246,9 @@
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>官网： <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a><br>hexo是一个快速，简单和强大的博客框架，使用Markdown作为渲染引擎解析文章，结合丰富的主题，分分钟生成绚丽的静态网页，是博客写作的首选。</p>
 <a id="more"></a>
 <p>Hexo搭建步骤：</p>
-<h1 id="1、安装git、Node-js"><a href="#1、安装git、Node-js" class="headerlink" title="1、安装git、Node.js"></a>1、安装git、Node.js</h1><p>到git官网上下载,Download git,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。安装好后，用git –version查看下版本</p>
+<h1 id="安装git、Node-js"><a href="#安装git、Node-js" class="headerlink" title="安装git、Node.js"></a>安装git、Node.js</h1><p>到git官网上下载,Download git,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。安装好后，用git –version查看下版本</p>
 <p>至于nodejs的安装教程，见网上，很多</p>
-<p>2、安装hexo</p>
-<p>在盘下建个hexo文件夹，在hexo下通过gitBash输入命令</p>
+<h1 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h1><p>在盘下建个hexo文件夹，在hexo下通过gitBash输入命令</p>
 <p>npm install -g hexo-cli</p>
 <p>hexo -v查看一下版本</p>
 <p>sudo apt-get install git</p>
@@ -259,7 +258,7 @@
 <p>运行以下命令</p>
 <p>hexo generate      #生成静态页面，简写为hexo g<br>hexo server        #简写为 hexo s</p>
 <p>在浏览器输入localhost:4000就可以看到你生成的博客了</p>
-<h1 id="3、GitHub创建个人仓库"><a href="#3、GitHub创建个人仓库" class="headerlink" title="3、GitHub创建个人仓库"></a>3、GitHub创建个人仓库</h1><p>创建一个和你用户名相同的仓库，就是xxxx.github.io，其中xxx就是你注册GitHub的用户名，public类型。</p>
+<h1 id="GitHub创建个人仓库"><a href="#GitHub创建个人仓库" class="headerlink" title="GitHub创建个人仓库"></a>GitHub创建个人仓库</h1><p>创建一个和你用户名相同的仓库，就是xxxx.github.io，其中xxx就是你注册GitHub的用户名，public类型。</p>
 <h2 id="生成SSH添加到GitHub"><a href="#生成SSH添加到GitHub" class="headerlink" title="生成SSH添加到GitHub"></a>生成SSH添加到GitHub</h2><p>git config –global user.name “yourname”<br>git config –global user.email “youremail”</p>
 <p>这里的yourname输入你的GitHub用户名，youremail输入你GitHub的邮箱。这样GitHub才能知道你是不是对应它的账户</p>
 <p>然后创建SSH,一路回车<br>ssh-keygen -t rsa -C “youremail”</p>
@@ -268,7 +267,7 @@
 <p>而后在GitHub的setting中，找到SSH keys的设置选项，点击New SSH key 把你的id_rsa.pub里面的信息复制进去，标题随便</p>
 <p>在gitbash中，查看是否成功</p>
 <p>ssh -T <a href="mailto:git@github.com">git@github.com</a></p>
-<h1 id="4、将hexo部署到GitHub"><a href="#4、将hexo部署到GitHub" class="headerlink" title="4、将hexo部署到GitHub"></a>4、将hexo部署到GitHub</h1><p>一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件 _config.yml，翻到最后，YourgithubName就是你的GitHub账户</p>
+<h1 id="将hexo部署到GitHub"><a href="#将hexo部署到GitHub" class="headerlink" title="将hexo部署到GitHub"></a>将hexo部署到GitHub</h1><p>一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件 _config.yml，翻到最后，YourgithubName就是你的GitHub账户</p>
 <p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/YourgithubName/YourgithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourgithubName/YourgithubName.github.io.git</a><br>  branch: master</p>
 <p>这个时候需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。</p>
 <p>npm install hexo-deployer-git –save<br>然后</p>
@@ -276,7 +275,7 @@
 <p>其中 hexo clean清除了你之前生成的东西，也可以不加。 hexo generate 顾名思义，生成静态文章，可以用 hexo g缩写 hexo deploy 部署文章，可以用hexo d缩写</p>
 <p>注意deploy时可能要你输入username和password。</p>
 <p>访问<a href="http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a> 就可以看到你的博客了！！</p>
-<h1 id="5、设置个人域名"><a href="#5、设置个人域名" class="headerlink" title="5、设置个人域名"></a>5、设置个人域名</h1><p>现在你的个人网站的地址是 yourname.github.io，如果觉得这个网址逼格不太够，这就需要你设置个人域名了。但是需要花钱。</p>
+<h1 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h1><p>现在你的个人网站的地址是 yourname.github.io，如果觉得这个网址逼格不太够，这就需要你设置个人域名了。但是需要花钱。</p>
 <p>注册一个阿里云账户,在阿里云上买一个域名，我买的是 shanyuhou.com，各个后缀的价格不太一样。</p>
 <p>你需要先去进行实名认证,然后在域名控制台中，看到你购买的域名。</p>
 <p>点解析进去，添加解析</p>
@@ -362,7 +361,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1、安装git、Node-js"><span class="nav-number">2.</span> <span class="nav-text">1、安装git、Node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、GitHub创建个人仓库"><span class="nav-number">3.</span> <span class="nav-text">3、GitHub创建个人仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成SSH添加到GitHub"><span class="nav-number">3.1.</span> <span class="nav-text">生成SSH添加到GitHub</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、将hexo部署到GitHub"><span class="nav-number">4.</span> <span class="nav-text">4、将hexo部署到GitHub</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、设置个人域名"><span class="nav-number">5.</span> <span class="nav-text">5、设置个人域名</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装git、Node-js"><span class="nav-number">2.</span> <span class="nav-text">安装git、Node.js</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装hexo"><span class="nav-number">3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitHub创建个人仓库"><span class="nav-number">4.</span> <span class="nav-text">GitHub创建个人仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生成SSH添加到GitHub"><span class="nav-number">4.1.</span> <span class="nav-text">生成SSH添加到GitHub</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将hexo部署到GitHub"><span class="nav-number">5.</span> <span class="nav-text">将hexo部署到GitHub</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置个人域名"><span class="nav-number">6.</span> <span class="nav-text">设置个人域名</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
