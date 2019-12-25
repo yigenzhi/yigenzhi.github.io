@@ -3,19 +3,50 @@
   <entry>
     <title>使用hexo搭建博客</title>
     <url>/2019/12/24/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>使用github pages服务搭建博客的好处有：</p>
-<ol>
-<li>全是静态文件，访问速度快；</li>
-<li>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</li>
-<li>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；</li>
-</ol>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>官网： <a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a><br>hexo是一个快速，简单和强大的博客框架，使用Markdown作为渲染引擎解析文章，结合丰富的主题，分分钟生成绚丽的静态网页，是博客写作的首选。</p>
 <a id="more"></a>
-
-<ol start="4">
-<li>数据绝对安全，基于github的版本管理，想恢复到哪个历史版本都行；</li>
-<li>博客内容可以轻松打包、转移、发布到其它平台；</li>
-<li>等等；</li>
-</ol>
+<p>Hexo搭建步骤：</p>
+<h1 id="1、安装git、Node-js"><a href="#1、安装git、Node-js" class="headerlink" title="1、安装git、Node.js"></a>1、安装git、Node.js</h1><p>到git官网上下载,Download git,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。安装好后，用git –version查看下版本</p>
+<p>至于nodejs的安装教程，见网上，很多</p>
+<p>2、安装hexo</p>
+<p>在盘下建个hexo文件夹，在hexo下通过gitBash输入命令</p>
+<p>npm install -g hexo-cli</p>
+<p>hexo -v查看一下版本</p>
+<p>sudo apt-get install git</p>
+<p>安装好后，用git –version 来查看一下版本<br>接下来初始化一下hexo，并安装依赖<br>hexo init<br>npm install</p>
+<p>建好后结构如下：</p>
+<p>├── _config.yml     # 站点配置文件<br>├── node_modules    # 依赖包<br>├── package.json    # 应用程序信息，包括markdown渲染器等<br>├── public          # hexo生成的页面信息<br>│   ├── 2019<br>│   ├── archives<br>│   ├── categories<br>│   ├── css<br>│   ├── images<br>│   ├── index.html<br>│   ├── js<br>│   └── lib<br>├── README.md       # 介绍文件<br>├── scaffolds       # 模板文件，新建文章时，Hexo会据此来建立新的文件<br>│   ├── draft.md    # 草稿<br>│   ├── page.md     #<br>│   └── post.md<br>├── source<br>│   ├── categories  # 资源文件，除_post外，开头命名为_的文件/文件夹和隐藏文件在生成过程中会被忽略<br>│   ├── _drafts     # 草稿<br>│   └── _posts      # 文章<br>└── themes          # 主题文件夹<br>    ├── next         # next主题<br>    └── landscape   # 默认主题</p>
+<p>运行以下命令</p>
+<p>hexo generate      #生成静态页面，简写为hexo g<br>hexo server        #简写为 hexo s</p>
+<p>在浏览器输入localhost:4000就可以看到你生成的博客了</p>
+<h1 id="3、GitHub创建个人仓库"><a href="#3、GitHub创建个人仓库" class="headerlink" title="3、GitHub创建个人仓库"></a>3、GitHub创建个人仓库</h1><p>创建一个和你用户名相同的仓库，就是xxxx.github.io，其中xxx就是你注册GitHub的用户名，public类型。</p>
+<h2 id="生成SSH添加到GitHub"><a href="#生成SSH添加到GitHub" class="headerlink" title="生成SSH添加到GitHub"></a>生成SSH添加到GitHub</h2><p>git config –global user.name “yourname”<br>git config –global user.email “youremail”</p>
+<p>这里的yourname输入你的GitHub用户名，youremail输入你GitHub的邮箱。这样GitHub才能知道你是不是对应它的账户</p>
+<p>然后创建SSH,一路回车<br>ssh-keygen -t rsa -C “youremail”</p>
+<p>这个时候它会告诉你已经生成了.ssh的文件夹。在你的电脑中找到这个文件夹</p>
+<p>ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
+<p>而后在GitHub的setting中，找到SSH keys的设置选项，点击New SSH key 把你的id_rsa.pub里面的信息复制进去，标题随便</p>
+<p>在gitbash中，查看是否成功</p>
+<p>ssh -T <a href="mailto:git@github.com">git@github.com</a></p>
+<h1 id="4、将hexo部署到GitHub"><a href="#4、将hexo部署到GitHub" class="headerlink" title="4、将hexo部署到GitHub"></a>4、将hexo部署到GitHub</h1><p>一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件 _config.yml，翻到最后，YourgithubName就是你的GitHub账户</p>
+<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/YourgithubName/YourgithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourgithubName/YourgithubName.github.io.git</a><br>  branch: master</p>
+<p>这个时候需要先安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。</p>
+<p>npm install hexo-deployer-git –save<br>然后</p>
+<p>hexo clean<br>hexo generate<br>hexo deploy</p>
+<p>其中 hexo clean清除了你之前生成的东西，也可以不加。 hexo generate 顾名思义，生成静态文章，可以用 hexo g缩写 hexo deploy 部署文章，可以用hexo d缩写</p>
+<p>注意deploy时可能要你输入username和password。</p>
+<p>访问<a href="http://yourname.github.io" target="_blank" rel="noopener">http://yourname.github.io</a> 就可以看到你的博客了！！</p>
+<h1 id="5、设置个人域名"><a href="#5、设置个人域名" class="headerlink" title="5、设置个人域名"></a>5、设置个人域名</h1><p>现在你的个人网站的地址是 yourname.github.io，如果觉得这个网址逼格不太够，这就需要你设置个人域名了。但是需要花钱。</p>
+<p>注册一个阿里云账户,在阿里云上买一个域名，我买的是 shanyuhou.com，各个后缀的价格不太一样。</p>
+<p>你需要先去进行实名认证,然后在域名控制台中，看到你购买的域名。</p>
+<p>点解析进去，添加解析</p>
+<p>需要添加两条记录<br>一条是记录类型是CNAME，主机记录www，记录值为yourname.github.io；<br>一条是记录类型默认A，主机记录是@，记录值为你yourname.github.io的IP，通过ping yourname.github.io 获取</p>
+<p>登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名如<a href="http://www.shanyuhou.com" target="_blank" rel="noopener">www.shanyuhou.com</a></p>
+<p>然后在你的博客文件source中创建一个名为CNAME文件，文件名不要后缀。写上你的域名</p>
+<p>hexo clean<br>hexo g<br>hexo d<br>过不了多久，再打开你的浏览器，输入你自己的域名，就可以看到搭建的网站啦！</p>
+<p>接下来你就可以正式开始写文章了</p>
+<p>hexo new “myfirst_blog”<br>然后在source/_post中打开markdown文件，就可以开始编辑了。当你写完的时候，再</p>
+<p>hexo clean<br>hexo g<br>hexo d</p>
 ]]></content>
       <tags>
         <tag>hexo</tag>
