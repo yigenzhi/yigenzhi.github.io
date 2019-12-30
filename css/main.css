@@ -147,7 +147,7 @@ template {
   display: none;
 }
 ::selection {
-  background: #00f;
+  background: #007fff;
   color: #fff;
 }
 html,
@@ -155,7 +155,7 @@ body {
   height: 100%;
 }
 body {
-  background: #808080;
+  background: #fff;
   color: #555;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
@@ -1166,7 +1166,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #42ff65;
+  background: #341f22;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
