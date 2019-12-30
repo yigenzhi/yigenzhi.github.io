@@ -33,6 +33,7 @@
 <p>接下来你就可以正式开始写文章了<br><code>hexo new &quot;myfirst_blog&quot;</code><br>然后在source/_post中打开markdown文件，就可以开始编辑了。当你写完的时候，再</p>
 <p><code>hexo clean</code><br><code>hexo g</code><br><code>hexo d</code></p>
 <h1 id="next主题"><a href="#next主题" class="headerlink" title="next主题"></a>next主题</h1><p>官方默认的主题比较丑，推荐next主题，首先hexo目录下下载next主题<br><code>git clone https://github.com/theme-next/hexo-theme-next themes/next</code><br>下载后的主题在themes下，修改跟目录hexo下<code>_config.yml</code>(不是next下的<code>_condig.yml</code>)中的<code>theme: landscape</code>改为<code>theme: next</code>，然后重新执行</p>
+<p><strong>待续。。。。。</strong></p>
 ]]></content>
       <tags>
         <tag>hexo</tag>
