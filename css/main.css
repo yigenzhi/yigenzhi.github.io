@@ -202,7 +202,7 @@ p {
 a,
 span.exturl {
   border-bottom: 1px solid #999;
-  color: #00f;
+  color: #555;
   outline: 0;
   text-decoration: none;
   overflow-wrap: break-word;
@@ -212,7 +212,7 @@ span.exturl {
 a:hover,
 span.exturl:hover {
   border-bottom-color: #222;
-  color: #222;
+  color: #00f;
 }
 iframe,
 img,
@@ -681,7 +681,7 @@ pre .javascript .function {
 }
 .post-body .tabs ul.nav-tabs li.tab.active a,
 .tabs-comment ul.nav-tabs li.tab.active a {
-  color: #00f;
+  color: #555;
   cursor: default;
 }
 .post-body .tabs .tab-content .tab-pane,
@@ -1166,7 +1166,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #c3b445;
+  background: #47baff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1867,7 +1867,7 @@ pre .javascript .function {
 }
 .post-nav-item a:hover {
   border-bottom: none;
-  color: #222;
+  color: #00f;
 }
 .post-nav-item a:active {
   top: 2px;
@@ -2150,7 +2150,7 @@ ul.breadcrumb li + li:last-child {
   margin: 10px;
 }
 .tag-cloud a:hover {
-  color: #222 !important;
+  color: #00f !important;
 }
 .search-pop-overlay {
   background: rgba(0,0,0,0.3);
