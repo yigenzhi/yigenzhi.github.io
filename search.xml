@@ -19,7 +19,7 @@
 <h1 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h1><p>&ensp;&ensp;&ensp;&ensp;现在你的个人网站的地址是 yourname.github.io，如果觉得这个网址逼格不太够，这就需要你设置个人域名了。但是需要花钱。<br>注册一个阿里云账户,在阿里云上买一个域名，我买的是 shanyuhou.com，各个后缀的价格不太一样。<br>你需要先去进行实名认证,然后在域名控制台中，看到你购买的域名。</p>
 <p>点解析进去，添加解析</p>
 <p>需要添加两条记录<br>一条是记录类型是<code>CNAME</code>，主机记录<code>www</code>，记录值为yourname.github.io；<br>一条是记录类型默认<code>A</code>，主机记录是<code>@</code>，记录值为你yourname.github.io的IP，通过ping yourname.github.io 获取</p>
-<p>登录GitHub，进入之前创建的仓库，点击settings，设置<code>Custom domain</code>，输入你的域名如<code>[www.shanyuhou.com]</code><a href="www.shanyuhou.com">3</a></p>
+<p>登录GitHub，进入之前创建的仓库，点击settings，设置<code>Custom domain</code>，输入你的域名如<a href="www.shanyuhou.com">www.shanyuhou.com</a></p>
 <p>然后在你的博客文件source中创建一个名为CNAME文件，文件名不要后缀。写上你的域名<br><code>hexo clean</code><br><code>hexo g</code><br><code>hexo d</code><br>过不了多久，再打开你的浏览器，输入你自己的域名，就可以看到搭建的网站啦！</p>
 <p>接下来你就可以正式开始写文章了<br><code>hexo new &quot;myfirst_blog&quot;</code><br>然后在source/_post中打开markdown文件，就可以开始编辑了。当你写完的时候，再</p>
 <p><code>hexo clean</code><br><code>hexo g</code><br><code>hexo d</code></p>
